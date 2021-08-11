@@ -35,9 +35,11 @@ public class App implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		
 		Persona p1 = new Persona("pedro", 20, "perez");
         Persona p2 = new Persona("juan", 25, "perez");
         Persona p3 = new Persona("ana", 30, "perez");
+        Persona p4 = new Persona("ana", 30, "perez");
         
         List <Persona> persones = new ArrayList<>();
         persones.add(p1);
