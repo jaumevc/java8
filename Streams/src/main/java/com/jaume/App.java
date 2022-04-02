@@ -40,7 +40,7 @@ public class App implements CommandLineRunner{
         Persona p2 = new Persona("juan", 25, "perez");
         Persona p3 = new Persona("ana", 30, "perez");
         Persona p4 = new Persona("jaume", 30, "perez");
-        Persona p4 = new Persona("jaume", 30, "valls");
+        Persona p5 = new Persona("jaume", 30, "valls");
         
         List <Persona> persones = new ArrayList<>();
         persones.add(p1);
