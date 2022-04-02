@@ -40,6 +40,7 @@ public class App implements CommandLineRunner{
         Persona p2 = new Persona("juan", 25, "perez");
         Persona p3 = new Persona("ana", 30, "perez");
         Persona p4 = new Persona("jaume", 30, "perez");
+        Persona p4 = new Persona("jaume", 30, "valls");
         
         List <Persona> persones = new ArrayList<>();
         persones.add(p1);
@@ -47,7 +48,7 @@ public class App implements CommandLineRunner{
         persones.add(p3);
         persones.add(new Persona("Alicia",19,"Gibert"));
         persones.add(new Persona("Jaume",49,"Valls"));
-        persones.add(new Persona("Susana",46,"Jiménez"));
+        persones.add(new Persona("Susana",46,"JimÃ©nez"));
 		
 //		LOG.warn("\nLAMBDA:");
 //		exempleSortLambda(persones);
@@ -108,7 +109,7 @@ public class App implements CommandLineRunner{
         f.addLinea(new LineaFactura(1, "jamon", 5));
         f.addLinea(new LineaFactura(1, "jamon", 4));
         
-        LOG.warn("\nAmb crida a mètodes del OBJECTE FACTRA:\n");  
+        LOG.warn("\nAmb crida a mÃ¨todes del OBJECTE FACTRA:\n");  
         /*
           //public double total() {
         	//double total = 0;
@@ -127,13 +128,13 @@ public class App implements CommandLineRunner{
 			//}
          */
         
-        System.out.println("Vendes jamón: "+ f.total(lineas -> lineas.getConcepto().contains("jamon")));
+        System.out.println("Vendes jamÃ³n: "+ f.total(lineas -> lineas.getConcepto().contains("jamon")));
        
         LOG.warn("\n\nDIRECTE DES DE STREAM():");
         f.getLineas().stream().filter(x->"jamon".equals(x.getConcepto())).map(l->l.getImporte()).reduce((x,y)->x+y).ifPresent(System.out::println);
 //        double turrons= f.getLineas().stream().filter(lf->lf.getConcepto().equals("turron")).mapToDouble(l -> l.getImporte()).sum();
 //        System.out.println("Vendes de torrons: "+turrons);
-//        LOG.warn("\n\nDIRECTE DES DE STREAM() EN UNA SOLA LÍNEA, vendes de torrons:");
+//        LOG.warn("\n\nDIRECTE DES DE STREAM() EN UNA SOLA LÃ�NEA, vendes de torrons:");
 //        f.getLineas().stream().filter(lf->lf.getConcepto().equals("turron")).map(e->e.getImporte()).reduce(Double::sum).ifPresent(System.out::println);
 		
 	}
@@ -173,7 +174,7 @@ public class App implements CommandLineRunner{
 		System.out.println("\nObtenim la suma de edats:");
 		persones.stream().map(Persona::getEdad).reduce((a,b)->a+b).ifPresent(System.out::println);
 		
-		System.out.println("\nObtenim l'Edat més alta:");
+		System.out.println("\nObtenim l'Edat mÃ©s alta:");
 		persones.stream().map(Persona::getEdad).reduce(Integer::max).ifPresent(System.out::println);
 		
 		System.out.println("\nObtenim la 1a Edat just mes jove de 30:");
@@ -181,7 +182,7 @@ public class App implements CommandLineRunner{
 	}
 
 	private void filtresMesPredicats() {
-		Libro lib = new Libro("El señor de los anillos", "fantasia", 1100);
+		Libro lib = new Libro("El seÃ±or de los anillos", "fantasia", 1100);
 		Libro lib2 = new Libro("El Juego de Ender", "ciencia ficcion", 1000);
 		Libro lib3 = new Libro("La fundacion", "ciencia ficcion", 500);
 		Libro lib4 = new Libro("Los pilares de la tierra", "historica", 1200);
@@ -196,8 +197,8 @@ public class App implements CommandLineRunner{
 //     lista.stream().filter(x -> x.getPag() > 1000).map(e -> e.getTitulo()).forEach(x -> System.out.println(x));
 		
 //		optenim llibres de ciencia ficcio o fantasia i que tingui >= de 1000 pag
-//		Stream filter amb predicat en classe: Predicate<T>: Evalúa un T y devuelve un boolean
-//		System.out.println("\nSTREAM() AMB FILTER I MAP AMB CRIDES A CLASSES I METODES PER FILTRAR (crida a mètode que usa Predicate<T>)\nI OPTENIR INFORMACIO (MAP) amb GET:");
+//		Stream filter amb predicat en classe: Predicate<T>: EvalÃºa un T y devuelve un boolean
+//		System.out.println("\nSTREAM() AMB FILTER I MAP AMB CRIDES A CLASSES I METODES PER FILTRAR (crida a mÃ¨tode que usa Predicate<T>)\nI OPTENIR INFORMACIO (MAP) amb GET:");
 //	   
 //		lista.stream().filter(LibroUtils::buenosLibros).map(Libro::getTitulo).forEach(System.out::println);
 //		lista.stream().filter(LibroUtils::buenosLibros).map(Libro::getTitulo).collect(Collectors.toList()).forEach(System.out::println);
@@ -342,7 +343,7 @@ public class App implements CommandLineRunner{
 		books.put("978-0134685991", "Effective Java");
 		books.put("978-0134685992", "Effective Java v2.0");
 
-		System.out.println("\nGetting a Map‘s Keys Using Streams");
+		System.out.println("\nGetting a Mapâ€˜s Keys Using Streams");
 		LOG.warn("\n\nRETRIEVING A MATCH:");
 		
 //		books.entrySet().stream().filter(x->x.getValue().contains("Java")).map(Entry::getValue).findFirst().ifPresent(System.out::println);
@@ -398,13 +399,13 @@ public class App implements CommandLineRunner{
 	
 	private void mesComu(Map<String, Integer> mapa) {
 		
-		System.out.println("\nEl nom més repetit amb lambda:");
+		System.out.println("\nEl nom mÃ©s repetit amb lambda:");
 		int comu= Collections.max(mapa.values());
 		mapa.forEach((x,y)->{
-			if(y == comu)System.out.println(x+", és el nom mes repetit, amb "+y+" repeticions");
+			if(y == comu)System.out.println(x+", Ã©s el nom mes repetit, amb "+y+" repeticions");
 		});
 		
-		System.out.println("\nEl nom més repetit, directe amb entrySet + stream():");
+		System.out.println("\nEl nom mÃ©s repetit, directe amb entrySet + stream():");
 		mapa.entrySet().stream().filter(e->e.getValue()==comu).forEach(System.out::println);
 
 	}
