@@ -77,6 +77,7 @@ public class App implements CommandLineRunner{
 //      tractarMapsAmbStreams();
 		
 		System.out.println("prova 220917");
+		System.out.println("prova2 220917");
         
 	}
 
