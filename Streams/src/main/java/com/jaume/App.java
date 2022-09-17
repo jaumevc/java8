@@ -76,7 +76,7 @@ public class App implements CommandLineRunner{
 //      LOG.warn("\n\nSTREAM + MAPS:\n");
 //      tractarMapsAmbStreams();
 		
-		system.out.println("220917");
+		System.out.println("220917");
         
 	}
 
